@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="delivery.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+
+<fooddeliverywebsite xmlns="www.tastytreats.com/fooddeliverywebsite">
+    <restaurant id="R1">
+        <restaurant-id>1</restaurant-id>
+        <restaurant-name>Tasty Treats</restaurant-name>
+        <hours>Mon-Sun: 8am-10pm</hours>
+        <menu>
+            <dish id="D1">
+                <dish-name>Pizza</dish-name>
+                <description>Creamy, cheesy pizza with fresh veggies.</description>
+                <price>5.99</price>
+            </dish>
+            <dish id="D2">
+                <dish-name>Burgers</dish-name>
+                <description>Bringing the burger game to a whole new level.</description>
+                <price>6.99</price>
+            </dish>
+            <dish id="D3">
+                <dish-name>Pasta</dish-name>
+                <description>Saucy pastas to satisfy your cravings.</description>
+                <price>6.99</price>
+            </dish>
+            <dish id="D4">
+                <dish-name>Fries</dish-name>
+                <description>Cream-loaded fries to just sit back and enjoy.</description>
+                <price>6.99</price>
+            </dish>
+            <dish id="D5">
+                <dish-name>Momos</dish-name>
+                <description>Sending you a virtual momos hug.</description>
+                <price>5.99</price>
+            </dish>
+            <dish id="D6">
+                <dish-name>Sandwiches</dish-name>
+                <description>Two beef patties, six strips of bacon, three slices of cheese, and a special sauce.</description>
+                <price>7.99</price>
+            </dish>
+        </menu>
+        <reviews>
+            <review>This restaurant is great! The food is delicious and the service is fast.</review>
+            
+        </reviews>
+    </restaurant>
+</fooddeliverywebsite>

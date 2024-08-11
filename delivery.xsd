@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.abc.com/restaurant" 
+           xmlns:rest="http://www.abc.com/restaurant" 
+           elementFormDefault="qualified">
+
+    <xs:element name="restaurants" type="rest:restaurantsType"/>
+
+    <xs:complexType name="restaurantsType">
+        <xs:sequence>
+            <xs:element name="restaurant" type="rest:restaurantType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="restaurantType">
+        <xs:sequence>
+            <xs:element name="restaurant-id" type="xs:integer"/>
+            <xs:element name="restaurant-name" type="xs:string"/>
+            <xs:element name="hours" type="rest:hoursType"/>
+            <xs:element name="menu" type="rest:menuType"/>
+            <xs:element name="reviews" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="hoursType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Mon|Tue|Wed|Thu|Fri|Sat|Sun)-(Mon|Tue|Wed|Thu|Fri|Sat|Sun): [0-9]{1,2}(am|pm)-[0-9]{1,2}(am|pm)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="menuType">
+        <xs:sequence>
+            <xs:element name="dish" maxOccurs="unbounded" type="rest:dishType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dishType">
+        <xs:sequence>
+            <xs:element name="dish-name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="price" type="rest:priceType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="priceType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.00"/>
+            <xs:maxInclusive value="100.00"/> <!-- Adjusted the max value -->
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
